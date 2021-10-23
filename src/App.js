@@ -13,17 +13,15 @@ class App extends React.Component {
     fetch("http://www.boredapi.com/api/activity/")
       .then(response => response.json())
       .then(data => 
-        this.setState = {
-          activity: {data}
-          //console.log(data)
-          }
+        this.setState({
+           activity:data
+          })
         )
-    //})
   }
   render() {
     return (
       <div className="App">
-        <p>hi</p>
+        {this.state.activity.type}
       </div>
     );
   }
